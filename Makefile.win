@@ -1,0 +1,28 @@
+# Project: ÏîÄ¿1
+# Makefile created by Dev-C++ 5.9.2
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = ×Ö·û»­Æ´Í¼.o
+LINKOBJ  = ×Ö·û»­Æ´Í¼.o
+LIBS     = -L"E:/devcpp_setup/devcpp_setup/MinGW32/lib" -static-libstdc++ -static-libgcc -pg
+INCS     = -I"E:/devcpp_setup/devcpp_setup/MinGW32/include"
+CXXINCS  = -I"E:/devcpp_setup/devcpp_setup/MinGW32/include"
+BIN      = ×Ö·û»­Æ´Í¼.exe
+CXXFLAGS = $(CXXINCS) -pg
+CFLAGS   = $(INCS) -pg
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+×Ö·û»­Æ´Í¼.o: ×Ö·û»­Æ´Í¼.cpp
+	$(CPP) -c ×Ö·û»­Æ´Í¼.cpp -o ×Ö·û»­Æ´Í¼.o $(CXXFLAGS)
